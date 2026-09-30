@@ -7,6 +7,7 @@ function Home({ onIrParaProjeto }) {
     <>
       <h1>Introdução</h1>
       <div className="containerIntro">
+        <p className="font-title text-5xl text-primary">Teste</p>
         <p>
           O desafio proposto é desenvolver uma interface de câmera para os Smartphones Jovi, utilizando as
           tecnologias de módulo automático e OCR (Optical Character Recognition). O objetivo é criar uma

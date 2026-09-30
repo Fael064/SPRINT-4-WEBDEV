@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap');
+@import "tailwindcss";
+
+@theme { 
+    --color-primary: #0d5e94;
+    --color-secondary: #2a177f;
+    --color-tertiary: #212429;
+    --color-surface: #1e293b;
+    --color-dark: #0b0c10;
+    --color-light: #F1FAEE;
+    --color-muted: #93a0b3;
+    --font-title: 'Anton', 'Arial Narrow', sans-serif;
+    --font-text: 'Work Sans', Arial, sans-serif;
+}
 
 body {
     margin: 0;
