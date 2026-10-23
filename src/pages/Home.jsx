@@ -1,4 +1,4 @@
-import telaJovi from '../assets/imagens/TELA JOVI.webp';
+import telaJovi from '../assets/imagens/tela-jovi.webp';
 import videoJovi from '../assets/imagens/videojovi.mp4';
 import Footer from '../components/Footer';
 
@@ -8,6 +8,7 @@ function Home({ onIrParaProjeto }) {
       <h1>Introdução</h1>
       <div className="containerIntro">
         <p className="font-title text-5xl text-primary">Teste</p>
+        <div className="containerIntro"></div>
         <p>
           O desafio proposto é desenvolver uma interface de câmera para os Smartphones Jovi, utilizando as
           tecnologias de módulo automático e OCR (Optical Character Recognition). O objetivo é criar uma
