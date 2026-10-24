@@ -1,8 +1,11 @@
 // Componente filho do App: recebe a página atual, uma função para trocar de página,
+
+import { NavLink } from "react-router-dom";
+
 // o usuário logado (ou null) e as funções de abrir o modal de login e de logout.
-function Nav({ paginaAtual, onNavegar, usuarioLogado, onAbrirLogin, onLogout }) {
+function Nav({usuarioLogado, onAbrirLogin, onLogout }) {
   const paginas = [
-    { id: 'home', label: 'Home' },
+    { id: '/', label: 'Home' },
     { id: 'projeto', label: 'Projeto' },
     { id: 'sobre', label: 'Sobre' },
   ];
@@ -11,17 +14,14 @@ function Nav({ paginaAtual, onNavegar, usuarioLogado, onAbrirLogin, onLogout }) 
     <ul className="sticky" style={{ justifyContent: 'space-between', alignItems: 'center', padding: '0 20px' }}>
       <div style={{ display: 'flex' }}>
         {paginas.map((pagina) => (
-          <li key={pagina.id}>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavegar(pagina.id);
-              }}
-              style={{ fontWeight: paginaAtual === pagina.id ? 'bold' : 'normal' }}
+          <li key={pagina.to}>
+            <NavLink 
+              to={pagina.to}
+              end
+              style={({ isActive }) => ({ fontWeight: isActive ? 'bold' : 'normal' })}
             >
               {pagina.label}
-            </a>
+            </NavLink>
           </li>
         ))}
       </div>
