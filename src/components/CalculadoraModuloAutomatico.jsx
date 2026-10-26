@@ -1,17 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useHistorico } from '../hooks/useHistorico';
 
-const CHAVE_HISTORICO = 'historicoConfiguracoesCamera';
 const MAX_HISTORICO = 8;
 
-// Lê o histórico salvo no localStorage (ou começa vazio)
-function carregarHistorico() {
-  try {
-    const bruto = localStorage.getItem(CHAVE_HISTORICO);
-    return bruto ? JSON.parse(bruto) : [];
-  } catch {
-    return [];
-  }
-}
 
 // Esse componente transforma em número real a ideia que já existia no protótipo da Sprint 2
 // ("perguntas de preferência ajustam a câmera automaticamente"), usando Math para calcular
@@ -21,11 +12,7 @@ function CalculadoraModuloAutomatico() {
   const [fundoDesfocado, setFundoDesfocado] = useState(false);
   const [coresVivas, setCoresVivas] = useState (false);
   const [resultado, setResultado] = useState(null);
-  const [historico, setHistorico] = useState(() => carregarHistorico());
-
-  useEffect(() => {
-    localStorage.setItem(CHAVE_HISTORICO, JSON.stringify(historico));
-  }, [historico]);
+  const { historico, carregando, erro, adicionar, limpar } = useHistorico();
 
   function calcularConfiguracao() {
     // ISO base ajustado conforme a luz do ambiente
@@ -54,14 +41,10 @@ function CalculadoraModuloAutomatico() {
     setResultado(novoResultado);
 
     // Mantém só os últimos MAX_HISTORICO cálculos
-    setHistorico((atual) => {
+    adicionar((novoResultado) => {
       const atualizado = [novoResultado, ...atual];
       return atualizado.slice(0, MAX_HISTORICO);
     });
-  }
-
-  function limparHistorico() {
-    setHistorico([]);
   }
 
   return (
@@ -100,7 +83,7 @@ function CalculadoraModuloAutomatico() {
           <div className="calculadora-historico-cabecalho">
             <h3>Histórico de cálculos ({historico.length}/{MAX_HISTORICO})</h3>
             {historico.length > 0 && (
-              <button type="button" className="calculadora-limpar" onClick={limparHistorico}>Limpar</button>
+              <button type="button" className="calculadora-limpar" onClick={limpar}>Limpar</button>
             )}
           </div>
           {historico.length === 0 ? (
