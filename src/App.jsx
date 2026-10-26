@@ -8,7 +8,7 @@ import Projeto from './pages/Projeto';
 import Sobre from './pages/Sobre';
 import { useAuth } from './hooks/useAuth';
 import RotaPrivada from './components/RotaPrivada';
-import Simulador from './components/Simulador';
+import Simulador from './pages/Simulador';
 
 function App() {
   const navigate = useNavigate();

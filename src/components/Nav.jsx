@@ -6,8 +6,8 @@ import { NavLink } from "react-router-dom";
 function Nav({usuarioLogado, onAbrirLogin, onLogout }) {
   const paginas = [
     { to: '/', label: 'Home' },
-    { to: 'projeto', label: 'Projeto' },
-    { to: 'sobre', label: 'Sobre' },
+    { to: '/projeto', label: 'Projeto' },
+    { to: '/sobre', label: 'Sobre' },
     { to: '/simulador', label: 'Simulador' },
   ];
 
