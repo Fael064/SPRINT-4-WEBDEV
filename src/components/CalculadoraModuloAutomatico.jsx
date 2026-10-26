@@ -41,10 +41,7 @@ function CalculadoraModuloAutomatico() {
     setResultado(novoResultado);
 
     // Mantém só os últimos MAX_HISTORICO cálculos
-    adicionar((novoResultado) => {
-      const atualizado = [novoResultado, ...atual];
-      return atualizado.slice(0, MAX_HISTORICO);
-    });
+    adicionar(novoResultado);
   }
 
   return (
@@ -81,17 +78,21 @@ function CalculadoraModuloAutomatico() {
 
         <div className="calculadora-historico">
           <div className="calculadora-historico-cabecalho">
-            <h3>Histórico de cálculos ({historico.length}/{MAX_HISTORICO})</h3>
+            <h3>Histórico de cálculos ({Math.min(historico.length, MAX_HISTORICO)}/ {MAX_HISTORICO})</h3>
             {historico.length > 0 && (
               <button type="button" className="calculadora-limpar" onClick={limpar}>Limpar</button>
             )}
           </div>
-          {historico.length === 0 ? (
+
+          {carregando && <p className="calculadora-vazio">Carregando histórico...</p>}
+          {erro && <p className="calculadora-vazio">Erro: {erro}</p>}
+          
+          {!carregando && historico.length === 0 ? (
             <p className="calculadora-vazio">Nenhum cálculo ainda, teste acima!</p>
           ) : (
             <ul>
-            {historico.map((item, indice) => (
-              <li key={indice}>
+            {historico.slice(0, MAX_HISTORICO).map((item) => (
+              <li key={item.id}>
                 {item.timestamp} — ISO {item.iso}, f/{item.abertura}, sat. {item.saturacao}%
               </li>
             ))}

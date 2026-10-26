@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { ServerRouter } from 'react-router-dom';
 
 const API_URL = 'https://6adfbb7f8e42963c8d5e5332.mockapi.io/Historico';
 
@@ -27,7 +26,7 @@ export function useHistorico() {
     async function adicionar(item) {
         try {
             setErro(null);
-            const resposta = await fecth (API_URL, {
+            const resposta = await fetch (API_URL, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(item),
