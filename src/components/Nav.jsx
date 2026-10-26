@@ -8,6 +8,7 @@ function Nav({usuarioLogado, onAbrirLogin, onLogout }) {
     { id: '/', label: 'Home' },
     { id: 'projeto', label: 'Projeto' },
     { id: 'sobre', label: 'Sobre' },
+    { to: '/simulador', label: 'Simulador' },
   ];
 
   return (
