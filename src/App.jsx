@@ -7,6 +7,10 @@ import Home from './pages/Home';
 import Projeto from './pages/Projeto';
 import Sobre from './pages/Sobre';
 import { useAuth } from './hooks/useAuth';
+import CalculadoraModuloAutomatico from './components/CalculadoraModuloAutomatico';
+import { Navigate } from 'react-router-dom';
+import RotaPrivada from './components/RotaPrivada';
+import Simulador from './components/Simulador';
 
 function App() {
   const navigate = useNavigate();
@@ -26,6 +30,15 @@ function App() {
         <Route path="/" element={<Home onIrParaProjeto={() => navigate('/projeto')} />} />
         <Route path="/projeto" element={<Projeto onIrParaSobre={() => navigate('/sobre')} />} />
         <Route path="/sobre" element={<Sobre onVoltarParaProjeto={() => navigate('/projeto')} />} />
+        
+        <Route
+          path="/simulador"
+          element={
+            <RotaPrivada usuarioLogado={auth.usuarioLogado}>
+              <Simulador />
+            </RotaPrivada>
+          }
+        />
       </Routes>
 
       <LoginModal visivel={modalAberto} onFechar={() => setModalAberto(false)} auth={auth} />
