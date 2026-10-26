@@ -31,7 +31,11 @@ export function useHistorico() {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(item),
             });
-            if (!resposta.ok) throw new Error('Erro ao salvar o cálculo');
+            if (!resposta.ok) {
+                const texto = await resposta.text();
+                throw new Error(`Erro ao salvar o cálculo (${resposta.status}): ${texto}`);
+            } 
+            
             const criado = await resposta.json();
             setHistorico ((atual) => [criado, ...atual]);
         }   catch (e) {
