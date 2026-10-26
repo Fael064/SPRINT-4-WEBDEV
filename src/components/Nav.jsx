@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 // o usuário logado (ou null) e as funções de abrir o modal de login e de logout.
 function Nav({usuarioLogado, onAbrirLogin, onLogout }) {
   const paginas = [
-    { id: '/', label: 'Home' },
-    { id: 'projeto', label: 'Projeto' },
-    { id: 'sobre', label: 'Sobre' },
+    { to: '/', label: 'Home' },
+    { to: 'projeto', label: 'Projeto' },
+    { to: 'sobre', label: 'Sobre' },
     { to: '/simulador', label: 'Simulador' },
   ];
 

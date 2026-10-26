@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const API_URL = '';
+const API_URL = 'https://6adfbb7f8e42963c8d5e5332.mockapi.io/Historico';
 
 export function useHistorico() {
     const [historico, setHistorico] = useState ([]);

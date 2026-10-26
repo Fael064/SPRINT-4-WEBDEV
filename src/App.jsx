@@ -7,8 +7,6 @@ import Home from './pages/Home';
 import Projeto from './pages/Projeto';
 import Sobre from './pages/Sobre';
 import { useAuth } from './hooks/useAuth';
-import CalculadoraModuloAutomatico from './components/CalculadoraModuloAutomatico';
-import { Navigate } from 'react-router-dom';
 import RotaPrivada from './components/RotaPrivada';
 import Simulador from './components/Simulador';
 
@@ -19,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Header titulo="CHALLENGE SPRINT 3" />
+      <Header titulo="CHALLENGE SPRINT 4" />
       <Nav
         usuarioLogado={auth.usuarioLogado}
         onAbrirLogin={() => setModalAberto(true)}

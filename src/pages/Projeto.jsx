@@ -1,6 +1,6 @@
 import sistemaOcr from '../assets/imagens/sistema-ocr.png';
 import moduloAutomatico from '../assets/imagens/modulo-automatico.png';
-import mvp from '../assets/imagens/mvp.jpeg';
+import mvp from '../assets/imagens/MVP.jpeg';
 import Footer from '../components/Footer';
 
 function Projeto({ onIrParaSobre }) {
@@ -40,8 +40,6 @@ function Projeto({ onIrParaSobre }) {
           funcionalidades da câmera dos Smartphones Jovi, tornando a experiência mais intuitiva e eficiente.
         </p>
       </header>
-
-      <CalculadoraModuloAutomatico />
 
       <h2 className="topicos">Imagens ilustrativas das funcionalidades</h2>
       <div className="ilustracao">
