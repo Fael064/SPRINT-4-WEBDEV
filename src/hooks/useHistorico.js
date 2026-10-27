@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const API_URL = 'https://6adfbb7f8e42963c8d5e5332.mockapi.io/Historico';
+const API_URL = 'https://6adfbb7f8e42963c8d5e5322.mockapi.io/historico';
 
 export function useHistorico() {
     const [historico, setHistorico] = useState ([]);
@@ -35,7 +35,7 @@ export function useHistorico() {
                 const texto = await resposta.text();
                 throw new Error(`Erro ao salvar o cálculo (${resposta.status}): ${texto}`);
             } 
-            
+
             const criado = await resposta.json();
             setHistorico ((atual) => [criado, ...atual]);
         }   catch (e) {
