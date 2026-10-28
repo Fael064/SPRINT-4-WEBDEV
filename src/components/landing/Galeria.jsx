@@ -1,7 +1,7 @@
 import ocr1 from '../../assets/images/OCR1.png';
 import inicial1 from '../../assets/images/inicial1.png';
-import ocr2 from '../assets/images/OCR2.png';
-import modulo from '../assets/images/modulo-automatico.png';
+import ocr2 from '../../assets/images/OCR2.png';
+import modulo from '../../assets/images/modulo-automatico.png';
 
 const imagens = [
     {src: ocr1, alt: 'Exemplo da função OCR', legenda: 'Função OCR'},
