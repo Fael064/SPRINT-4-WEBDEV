@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route, useNavigate} from 'react-router-dom';
-import Header from './components/Header';
-import Nav from './components/Nav';
 import LoginModal from './components/LoginModal';
 import Home from './pages/Home';
-import Projeto from './pages/Projeto';
-import Sobre from './pages/Sobre';
 import { useAuth } from './hooks/useAuth';
 import RotaPrivada from './components/RotaPrivada';
 import Simulador from './pages/Simulador';
@@ -25,9 +21,7 @@ function App() {
       />
 
       <Routes>
-        <Route path="/" element={<Home onIrParaProjeto={() => navigate('/projeto')} />} />
-        <Route path="/projeto" element={<Projeto onIrParaSobre={() => navigate('/sobre')} />} />
-        <Route path="/sobre" element={<Sobre onVoltarParaProjeto={() => navigate('/projeto')} />} />
+        <Route path="/" element={<Home onIrParaProjeto={() => navigate('/projeto')} />} />         
         
         <Route
           path="/simulador"

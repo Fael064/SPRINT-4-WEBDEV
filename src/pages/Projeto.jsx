@@ -1,5 +1,4 @@
 import sistemaOcr from '../assets/imagens/sistema-ocr.png';
-import moduloAutomatico from '../assets/imagens/modulo-automatico.png';
 import mvp from '../assets/imagens/MVP.jpeg';
 import Footer from '../components/Footer';
 
