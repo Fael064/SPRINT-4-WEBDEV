@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Menu from './components/landing/Menu';
+import Rodape from './components/landing/Rodape';
 import { Routes, Route } from 'react-router-dom';
 import LoginModal from './components/LoginModal';
 import Home from './pages/Home';
@@ -19,18 +20,22 @@ function App() {
         onLogout={auth.logout}
       />
 
-      <Routes>
-        <Route path="/" element={<Home />} />         
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />         
         
-        <Route
-          path="/simulador"
-          element={
-            <RotaPrivada usuarioLogado={auth.usuarioLogado}>
-              <Simulador />
-            </RotaPrivada>
-          }
-        />
-      </Routes>
+          <Route
+            path="/simulador"
+            element={
+              <RotaPrivada usuarioLogado={auth.usuarioLogado}>
+                <Simulador />
+              </RotaPrivada>
+            }
+          />
+        </Routes>
+      </main>
+
+      <Rodape />
 
       <LoginModal visivel={modalAberto} onFechar={() => setModalAberto(false)} auth={auth} />
     </>
