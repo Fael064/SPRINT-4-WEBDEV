@@ -6,7 +6,7 @@ const MAX_HISTORICO = 8;
 
 // Esse componente transforma em número real a ideia que já existia no protótipo da Sprint 2
 // ("perguntas de preferência ajustam a câmera automaticamente"), usando Math para calcular
-// ISO e abertura sugeridos, e localStorage para guardar um histórico dos últimos cálculos.
+// ISO e abertura sugeridos, e localStorage para guardar a Api.
 function CalculadoraModuloAutomatico() {
   const [poucaLuz, setPoucaLuz] = useState(false);
   const [fundoDesfocado, setFundoDesfocado] = useState(false);

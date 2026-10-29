@@ -33,7 +33,7 @@ export function useHistorico() {
             });
             if (!resposta.ok) {
                 const texto = await resposta.text();
-                throw new Error(`Erro ao salvar o cálculo (${resposta.status}): ${texto}`);
+                throw new Error(`Erro ao salvar o cálculo: ${texto}`);
             } 
 
             const criado = await resposta.json();
