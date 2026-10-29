@@ -1,8 +1,8 @@
-import user1 from '../assets/images/user-1.png';
-import user2 from '../assets/images/user-2.png';
-import user3 from '../assets/images/user-3.png';
-import user4 from '../assets/images/user-4.png';
-import user5 from '../assets/images/user-5.png';
+import user1 from '../assets/images/user-1.webp';
+import user2 from '../assets/images/user-2.webp';
+import user3 from '../assets/images/user-3.webp';
+import user4 from '../assets/images/user-4.webp';
+import user5 from '../assets/images/user-5.webp';
 
 export const integrantes = [
     {nome: 'Aquilles Mello Mendonça', rm: '571465', funcao: 'Desenvolvedor Frontend', email: 'aquillesmm@gmail.com', foto: user2 },

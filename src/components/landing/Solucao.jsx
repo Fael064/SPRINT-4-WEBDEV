@@ -1,4 +1,4 @@
-import moduloAutomatico from '../../assets/images/modulo-automatico.png';
+import moduloAutomatico from '../../assets/images/modulo-automatico.webp';
 
 function Solucao() {
   return (
