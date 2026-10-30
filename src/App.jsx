@@ -14,30 +14,31 @@ function App() {
 
   return (
     <>
-      <Menu
-        usuarioLogado={auth.usuarioLogado}
-        onAbrirLogin={() => setModalAberto(true)}
-        onLogout={auth.logout}
-      />
+      <div className="flex min-h-screen flex-col">
+        <Menu
+          usuarioLogado={auth.usuarioLogado}
+          onAbrirLogin={() => setModalAberto(true)}
+          onLogout={auth.logout}
+        />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />         
-        
-          <Route
-            path="/simulador"
-            element={
-              <RotaPrivada usuarioLogado={auth.usuarioLogado}>
-                <Simulador />
-              </RotaPrivada>
-            }
-          />
-        </Routes>
-      </main>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />         
+            <Route
+              path="/simulador"
+              element={
+                <RotaPrivada usuarioLogado={auth.usuarioLogado}>
+                  <Simulador />
+                </RotaPrivada>
+              }
+            />
+          </Routes>
+        </main>
 
-      <Rodape />
+        <Rodape />
+        </div>
 
-      <LoginModal visivel={modalAberto} onFechar={() => setModalAberto(false)} auth={auth} />
+        <LoginModal visivel={modalAberto} onFechar={() => setModalAberto(false)} auth={auth} />
     </>
   );
 }
