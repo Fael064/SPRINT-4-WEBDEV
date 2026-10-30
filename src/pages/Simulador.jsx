@@ -3,7 +3,7 @@ import CalculadoraModuloAutomatico from '../components/CalculadoraModuloAutomati
 function Simulador() {
     return (
         <div className="pt-24">
-            <CalculadoraModuloAutomatico />;
+            <CalculadoraModuloAutomatico />
         </div>
     );
 }
