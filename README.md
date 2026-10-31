@@ -31,8 +31,8 @@ Ambiente de desenvolvimento (com hot reload):
 ```bash
 npm run dev # desenvolvimento (http://localhost:5173 ou a porta mostrada no terminal )
 npm run build # build de produção
-npm run preview #pré-visualização do build
-npm run lint #verificação com oxlint
+npm run preview # pré-visualização do build
+npm run lint #v erificação com oxlint
 ```
 
 **Servidores/back-end:** o projeto não tem back-end próprio. O consumo de API usa o serviço
@@ -75,13 +75,16 @@ src/
 │   ├── landing/ # Menu, Hero, Solucao, PublicoAlvo, Galeria, Equipe, Contato, Rodape
 │   ├── CalculadoraModuloAutomatico.jsx
 │   ├── LoginModal.jsx
-│   ├── RotaPrivada.jsx
+│   └── RotaPrivada.jsx
 ├── data/integrantes.js  # dados da equipe usados por Equipe, Contato e Rodape
 ├── hooks/ # useAuth.js, useHistorico.js
 ├── pages/ # Home.jsx, Simulador.jsx
 ├── assets/images/ # imagens otimizadas (webp)
 ├── App.jsx # rotas e layout
-└── index.css # Tailwind, tema (cores/fontes) e estilos do modal de login
+├── index.css # Tailwind, tema (cores/fontes) e estilos do modal de login
+├── vercel.json
+├── INTEGRANTES.TXT
+└── README.md
 ```
 ## Mudanças em relação à Sprint 3
 
